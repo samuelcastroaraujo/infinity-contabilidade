@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Calculator } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const CALCULATORS = [
+export const CALCULATORS = [
   {
     label: "Custo para abrir CNPJ",
     description: "Estime o custo de abertura da sua empresa",

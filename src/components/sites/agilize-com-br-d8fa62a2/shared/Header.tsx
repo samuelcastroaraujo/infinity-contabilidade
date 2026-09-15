@@ -1,8 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { LogIn } from "lucide-react";
+import { LogIn, Menu, X, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
-import { CalculatorsMenu } from "./CalculatorsMenu";
+import { CalculatorsMenu, CALCULATORS } from "./CalculatorsMenu";
 
 const NAV_LINKS_BEFORE = [
   { label: "Início", href: "/" },
@@ -18,10 +21,12 @@ const CLIENT_AREA_URL =
   "https://passport.nibo.com.br/account/login?id=883acbbd-8468-40ea-a9b0-7e130d91d4e9";
 
 export function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 flex h-[84px] w-full items-center border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 lg:px-10">
-        <Link href="/" aria-label="Infinity Contabilidade">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
+      <div className="mx-auto flex h-[84px] w-full max-w-[1440px] items-center justify-between px-6 lg:px-10">
+        <Link href="/" aria-label="Infinity Contabilidade" onClick={() => setMobileOpen(false)}>
           <Logo />
         </Link>
 
@@ -47,18 +52,73 @@ export function Header() {
           <CalculatorsMenu />
         </nav>
 
-        <Button
-          variant="outline"
-          className="rounded-full border-primary px-4 text-primary"
-          nativeButton={false}
-          render={
-            <a href={CLIENT_AREA_URL} target="_blank" rel="noopener noreferrer">
+        <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            className="hidden rounded-full border-primary px-4 text-primary sm:flex"
+            nativeButton={false}
+            render={
+              <a href={CLIENT_AREA_URL} target="_blank" rel="noopener noreferrer">
+                <LogIn className="size-4" />
+                Área do Cliente
+              </a>
+            }
+          />
+
+          <button
+            type="button"
+            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+            className="flex size-10 items-center justify-center rounded-full text-foreground lg:hidden"
+          >
+            {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
+      </div>
+
+      {mobileOpen && (
+        <div className="border-t border-border bg-background px-6 py-4 lg:hidden">
+          <nav className="flex flex-col gap-1">
+            {[...NAV_LINKS_BEFORE, ...NAV_LINKS_AFTER].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-muted"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <p className="mt-2 px-3 text-xs font-bold uppercase tracking-wide text-muted-foreground">
+              Calculadoras
+            </p>
+            {CALCULATORS.map((calc) => (
+              <Link
+                key={calc.href}
+                href={calc.href}
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-3 rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-muted"
+              >
+                <Calculator className="size-4 text-primary" />
+                {calc.label}
+              </Link>
+            ))}
+
+            <a
+              href={CLIENT_AREA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="mt-3 flex items-center justify-center gap-2 rounded-full border border-primary px-4 py-3 text-base font-semibold text-primary sm:hidden"
+            >
               <LogIn className="size-4" />
               Área do Cliente
             </a>
-          }
-        />
-      </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

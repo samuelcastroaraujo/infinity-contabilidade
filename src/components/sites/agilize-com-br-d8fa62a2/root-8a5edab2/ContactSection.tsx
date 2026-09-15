@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Camera } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ContactForm } from "./ContactForm";
 
 const PHONES = [
   { label: "WhatsApp", value: "(62) 99105-3454", href: "https://wa.me/5562991053454" },
@@ -67,47 +67,7 @@ export function ContactSection() {
           </div>
         </div>
 
-        <form className="relative overflow-hidden rounded-3xl bg-primary p-8 text-primary-foreground">
-          <div className="relative z-10 grid grid-cols-1 gap-4">
-            <label className="flex flex-col gap-1.5 text-sm">
-              Nome
-              <input
-                className="h-11 rounded-lg border border-primary-foreground/20 bg-background px-3 text-foreground placeholder:text-muted-foreground"
-                placeholder="Digite seu nome completo"
-              />
-            </label>
-            <label className="flex flex-col gap-1.5 text-sm">
-              E-mail
-              <input
-                type="email"
-                className="h-11 rounded-lg border border-primary-foreground/20 bg-background px-3 text-foreground placeholder:text-muted-foreground"
-                placeholder="exemplo@gmail.com"
-              />
-            </label>
-            <label className="flex flex-col gap-1.5 text-sm">
-              Assunto
-              <input
-                className="h-11 rounded-lg border border-primary-foreground/20 bg-background px-3 text-foreground placeholder:text-muted-foreground"
-                placeholder="Sobre o que você quer falar?"
-              />
-            </label>
-            <label className="flex flex-col gap-1.5 text-sm">
-              Mensagem
-              <textarea
-                rows={4}
-                className="rounded-lg border border-primary-foreground/20 bg-background px-3 py-2 text-foreground placeholder:text-muted-foreground"
-                placeholder="Escreva sua mensagem"
-              />
-            </label>
-          </div>
-
-          <Button className="relative z-10 mt-6 h-11 w-full rounded-full bg-accent text-accent-foreground hover:bg-accent/90">
-            Enviar mensagem
-          </Button>
-
-          <div className="absolute -right-10 -top-10 size-40 rounded-full bg-primary-foreground/10" />
-          <div className="absolute -bottom-16 -left-10 size-48 rounded-full bg-primary-foreground/10" />
-        </form>
+        <ContactForm />
       </div>
     </section>
   );

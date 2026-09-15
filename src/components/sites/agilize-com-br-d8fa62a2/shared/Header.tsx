@@ -2,13 +2,15 @@ import Link from "next/link";
 import { LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
+import { CalculatorsMenu } from "./CalculatorsMenu";
 
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
+const NAV_LINKS_BEFORE = [
+  { label: "Início", href: "/" },
   { label: "Sobre", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Contato", href: "#contato" },
 ];
+
+const NAV_LINKS_AFTER = [{ label: "Contato", href: "#contato" }];
 
 const CLIENT_AREA_URL =
   "https://passport.nibo.com.br/account/login?id=883acbbd-8468-40ea-a9b0-7e130d91d4e9";
@@ -22,7 +24,17 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS_BEFORE.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary"
+            >
+              {link.label}
+            </a>
+          ))}
+          <CalculatorsMenu />
+          {NAV_LINKS_AFTER.map((link) => (
             <a
               key={link.label}
               href={link.href}

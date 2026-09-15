@@ -5,9 +5,9 @@ function WhatsAppMockup() {
   return (
     <div className="relative mx-auto h-56 w-32 overflow-hidden rounded-[1.5rem] border-4 border-foreground/10 bg-background shadow-inner">
       <div className="absolute left-1/2 top-1.5 z-10 h-1 w-8 -translate-x-1/2 rounded-full bg-foreground/10" />
-      <div className="flex h-8 items-center gap-1.5 rounded-t-[1.1rem] bg-primary px-2.5 pt-1">
+      <div className="flex h-8 items-center justify-center gap-1.5 rounded-t-[1.1rem] bg-primary px-2.5 pt-1">
         <span className="size-4 shrink-0 rounded-full bg-primary-foreground/30" />
-        <span className="truncate text-[7px] font-bold leading-none text-primary-foreground">
+        <span className="truncate text-center text-[7px] font-bold leading-none text-primary-foreground">
           Infinity Contabilidade
         </span>
       </div>
@@ -63,7 +63,7 @@ function SiteMockup() {
         <span className="size-2 rounded-full bg-destructive/50" />
         <span className="size-2 rounded-full bg-brand-amber/70" />
         <span className="size-2 rounded-full bg-accent/70" />
-        <span className="ml-2 flex-1 truncate rounded-full bg-muted px-2 py-0.5 text-[7px] text-muted-foreground">
+        <span className="ml-2 flex-1 truncate rounded-full bg-muted px-2 py-0.5 text-center text-[7px] text-muted-foreground">
           infinitycontabilidade.com.br
         </span>
       </div>

@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 
 const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Sobre", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Soluções", href: "#solucoes" },
-  { label: "Planos", href: "#planos" },
-  { label: "Recursos", href: "#recursos" },
-  { label: "Sobre nós", href: "#sobre" },
+  { label: "Contato", href: "#contato" },
 ];
 
 const CLIENT_AREA_URL =

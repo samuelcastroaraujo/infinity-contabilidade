@@ -64,7 +64,7 @@ function SiteMockup() {
         <span className="size-2 rounded-full bg-brand-amber/70" />
         <span className="size-2 rounded-full bg-accent/70" />
         <span className="ml-2 flex-1 truncate rounded-full bg-muted px-2 py-0.5 text-center text-[7px] text-muted-foreground">
-          infinitycontabilidade.com.br
+          infinitycontabilidade.net
         </span>
       </div>
 

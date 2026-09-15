@@ -35,7 +35,6 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <CalculatorsMenu />
           {NAV_LINKS_AFTER.map((link) => (
             <a
               key={link.label}
@@ -45,6 +44,7 @@ export function Header() {
               {link.label}
             </a>
           ))}
+          <CalculatorsMenu />
         </nav>
 
         <Button

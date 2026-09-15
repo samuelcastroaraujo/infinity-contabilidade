@@ -86,7 +86,7 @@ export function CltPjCalculator() {
         <p className="mt-4 text-xs text-muted-foreground">
           Ao utilizar esta ferramenta, você concorda que os valores
           apresentados são estimativas simplificadas com base nas tabelas
-          públicas de INSS e IRPF vigentes em 2025, e não substituem uma
+          públicas de INSS e IRPF vigentes em 2026, e não substituem uma
           análise contábil individualizada.
         </p>
       </div>
@@ -106,6 +106,14 @@ export function CltPjCalculator() {
               <Row label="Férias + 1/3 (proporcional/mês)" value={formatBRL(cltResultado.feriasProrated)} />
               <Row label="FGTS (proporcional/mês)" value={formatBRL(cltResultado.fgtsProrated)} />
               <Row label="Valor total mensal equivalente" value={formatBRL(cltResultado.valorTotalMensal)} strong />
+              <Row
+                label="Valor total anual equivalente"
+                value={formatBRL(cltResultado.valorTotalMensal * 12)}
+              />
+              <Row
+                label="Carga de INSS + IRPF sobre o bruto"
+                value={`${(((cltResultado.inss + cltResultado.irpf) / inputs.salarioBruto) * 100).toFixed(1)}%`}
+              />
             </dl>
           </div>
 

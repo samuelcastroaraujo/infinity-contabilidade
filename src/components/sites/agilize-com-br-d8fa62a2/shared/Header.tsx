@@ -11,6 +11,9 @@ const NAV_LINKS = [
   { label: "Sobre nós", href: "#sobre" },
 ];
 
+const CLIENT_AREA_URL =
+  "https://passport.nibo.com.br/account/login?id=883acbbd-8468-40ea-a9b0-7e130d91d4e9";
+
 export function Header() {
   return (
     <header className="sticky top-0 z-50 flex h-[84px] w-full items-center border-b border-border bg-background/95 backdrop-blur">
@@ -31,10 +34,17 @@ export function Header() {
           ))}
         </nav>
 
-        <Button variant="outline" className="rounded-full border-primary px-4 text-primary">
-          <LogIn className="size-4" />
-          Login
-        </Button>
+        <Button
+          variant="outline"
+          className="rounded-full border-primary px-4 text-primary"
+          nativeButton={false}
+          render={
+            <a href={CLIENT_AREA_URL} target="_blank" rel="noopener noreferrer">
+              <LogIn className="size-4" />
+              Área do Cliente
+            </a>
+          }
+        />
       </div>
     </header>
   );

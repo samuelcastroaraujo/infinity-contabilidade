@@ -7,11 +7,9 @@ import { Button } from "@/components/ui/button";
 
 const PLANS = [
   {
-    name: "Basic",
+    name: "Infinity Basic",
     badge: "Benefícios exclusivos",
     description: "Perfeito para quem precisa de suporte, autonomia e agilidade no dia a dia.",
-    oldPrice: "R$ 324,00",
-    price: "259,00",
     highlighted: false,
     features: [
       "Abertura de CNPJ (grátis)",
@@ -23,14 +21,12 @@ const PLANS = [
     ],
   },
   {
-    name: "Unique",
+    name: "Infinity Pro",
     badge: "Especialista dedicado",
     description: "Tenha um gerente de conta dedicado para sua empresa.",
-    oldPrice: "R$ 562,00",
-    price: "450,00",
     highlighted: true,
     features: [
-      "Tudo do plano Basic, mais:",
+      "Tudo do plano Infinity Basic, mais:",
       "Gerente de conta dedicado",
       "Horário estendido: atendimento das 8h às 21h",
       "Gestão de folha: até 5 pessoas",
@@ -39,14 +35,12 @@ const PLANS = [
     ],
   },
   {
-    name: "Unique Plus",
+    name: "Infinity Plus",
     badge: "Alta demanda",
     description: "Para quem tem uma operação maior e mais demandas financeiras.",
-    oldPrice: "R$ 875,00",
-    price: "700,00",
     highlighted: false,
     features: [
-      "Tudo do plano Unique, mais:",
+      "Tudo do plano Infinity Pro, mais:",
       "Até 100 operações de notas fiscais por mês",
       "Importação de até 800 notas fiscais",
       "Importação de extrato bancário: até 3 contas",
@@ -113,23 +107,11 @@ export function PricingSection() {
                 <p className="mt-2 text-center text-sm text-muted-foreground">
                   {plan.description}
                 </p>
-                <div className="mt-4 text-center">
-                  <p className="text-sm text-muted-foreground line-through">
-                    {plan.oldPrice}
-                  </p>
-                  <p className="font-heading text-3xl font-extrabold text-foreground">
-                    R$ {plan.price}
-                    <span className="text-base font-medium text-muted-foreground">
-                      /mês
-                    </span>
-                  </p>
-                  <span className="mt-1 inline-block rounded-full bg-secondary px-3 py-1 text-xs font-bold text-secondary-foreground">
-                    20% de desconto
-                  </span>
-                </div>
-                <Button className="mt-5 h-11 w-full rounded-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  Contratar
-                </Button>
+                <Button
+                  className="mt-6 h-11 w-full rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
+                  nativeButton={false}
+                  render={<a href="#contato">Falar com especialista</a>}
+                />
 
                 <ul className="mt-6 space-y-3 border-t border-border pt-6 text-sm">
                   {plan.features.map((f) => (
@@ -144,8 +126,8 @@ export function PricingSection() {
           ))}
         </div>
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          *Valores válidos para empresas do Simples Nacional. Para Lucro
-          Presumido, fale com os especialistas.
+          *Condições variam conforme o regime tributário da sua empresa.
+          Fale com um especialista para uma proposta personalizada.
         </p>
       </div>
     </section>

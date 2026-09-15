@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export function LeadFormSection() {
   return (
-    <section className="py-20">
+    <section id="contato" className="py-20 scroll-mt-24">
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:px-10">
         <div>
           <h2 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">

@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/sites/agilize-com-br-d8fa62a2/root-8a5
 import { ChannelsSection } from "@/components/sites/agilize-com-br-d8fa62a2/root-8a5edab2/ChannelsSection";
 import { AboutSection } from "@/components/sites/agilize-com-br-d8fa62a2/root-8a5edab2/AboutSection";
 import { ServicesSection } from "@/components/sites/agilize-com-br-d8fa62a2/root-8a5edab2/ServicesSection";
+import { SegmentsSection } from "@/components/sites/agilize-com-br-d8fa62a2/root-8a5edab2/SegmentsSection";
 import { FaqSection } from "@/components/sites/agilize-com-br-d8fa62a2/root-8a5edab2/FaqSection";
 import { ContactSection } from "@/components/sites/agilize-com-br-d8fa62a2/root-8a5edab2/ContactSection";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <ChannelsSection />
         <AboutSection />
         <ServicesSection />
+        <SegmentsSection />
         <FaqSection />
         <ContactSection />
       </main>

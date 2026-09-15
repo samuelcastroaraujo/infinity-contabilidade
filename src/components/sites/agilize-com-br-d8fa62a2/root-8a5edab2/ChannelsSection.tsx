@@ -114,7 +114,7 @@ export function ChannelsSection() {
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           {CHANNELS.map((channel) => (
             <div key={channel.name} className="rounded-2xl bg-background p-7 shadow-sm">
-              <p className="font-heading text-lg font-bold text-foreground">
+              <p className="text-center font-heading text-lg font-bold uppercase text-foreground">
                 {channel.name}
               </p>
               <p className="mt-2 text-sm text-muted-foreground">

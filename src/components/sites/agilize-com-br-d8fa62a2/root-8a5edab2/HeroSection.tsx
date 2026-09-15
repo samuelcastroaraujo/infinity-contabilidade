@@ -12,8 +12,8 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-primary">
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:px-10 lg:py-24">
         <div className="relative z-10 text-primary-foreground">
-          <h1 className="font-heading text-2xl font-extrabold leading-[1.2] tracking-tight sm:text-3xl">
-            O limite do crescimento do seu negócio? Nenhum.
+          <h1 className="font-heading text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">
+            Bem-Vindo à
             <br />
             <span className="uppercase">Infinity Contabilidade</span>
           </h1>

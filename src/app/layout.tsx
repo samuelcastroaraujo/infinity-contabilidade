@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Baloo_2, Geist_Mono } from "next/font/google";
+import { Lato, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const lato = Lato({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "700", "900"],
 });
 
-const baloo2 = Baloo_2({
+const inter = Inter({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
 });
 
 const geistMono = Geist_Mono({
@@ -54,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${baloo2.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${lato.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         <script

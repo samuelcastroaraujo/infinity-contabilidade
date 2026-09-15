@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Lato", "Lato Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
-  --font-heading: "Baloo 2", "Baloo 2 Fallback", var(--font-sans);
+  --font-heading: "Inter", "Inter Fallback", var(--font-sans);
   --color-brand-amber: var(--brand-amber);
   --color-brand-amber-foreground: var(--brand-amber-foreground);
   --color-sidebar-ring: var(--sidebar-ring);

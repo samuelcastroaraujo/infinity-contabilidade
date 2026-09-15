@@ -13,7 +13,9 @@ export function HeroSection() {
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:px-10 lg:py-24">
         <div className="relative z-10 text-primary-foreground">
           <h1 className="font-heading text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">
-            Bem-vindo à Infinity Contabilidade
+            Bem-vindo à
+            <br />
+            <span className="uppercase">Infinity Contabilidade</span>
           </h1>
           <p className="mt-5 max-w-lg text-lg font-medium text-primary-foreground/90">
             Soluções contábeis completas para o crescimento do seu negócio!

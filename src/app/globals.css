@@ -133,3 +133,75 @@
     @apply font-sans;
   }
 }
+
+/* Channel mockup animations (ChannelsSection) — original, looping UI demos */
+@keyframes channel-bubble-out {
+  0%, 8% { opacity: 0; transform: translateY(6px); }
+  16%, 86% { opacity: 1; transform: translateY(0); }
+  94%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+@keyframes channel-typing-dots {
+  0%, 16% { opacity: 0; }
+  20%, 30% { opacity: 1; }
+  36%, 100% { opacity: 0; }
+}
+@keyframes channel-bubble-reply {
+  0%, 34% { opacity: 0; transform: translateY(6px); }
+  40%, 86% { opacity: 1; transform: translateY(0); }
+  94%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+@keyframes channel-btn-press {
+  0%, 40% { transform: scale(1); }
+  44% { transform: scale(0.9); }
+  48%, 100% { transform: scale(1); }
+}
+@keyframes channel-success-in {
+  0%, 44% { opacity: 0; transform: scale(0.85); }
+  52%, 88% { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(0.9); }
+}
+@keyframes channel-cursor-move {
+  0%, 4% { top: 22%; left: 14%; }
+  22%, 30% { top: 18%; left: 62%; }
+  33% { transform: translate(-50%, -50%) scale(0.6); }
+  36% { transform: translate(-50%, -50%) scale(1); }
+  55%, 63% { top: 62%; left: 24%; }
+  66% { transform: translate(-50%, -50%) scale(0.6); }
+  69% { transform: translate(-50%, -50%) scale(1); }
+  90%, 100% { top: 22%; left: 14%; }
+}
+@keyframes channel-section-pulse-1 {
+  0%, 28% { background-color: var(--secondary); }
+  33%, 48% { background-color: color-mix(in oklch, var(--primary) 18%, var(--secondary)); }
+  53%, 100% { background-color: var(--secondary); }
+}
+@keyframes channel-section-pulse-2 {
+  0%, 61% { background-color: var(--secondary); }
+  66%, 81% { background-color: color-mix(in oklch, var(--primary) 18%, var(--secondary)); }
+  86%, 100% { background-color: var(--secondary); }
+}
+
+.animate-channel-bubble-out {
+  animation: channel-bubble-out 5s ease-in-out infinite;
+}
+.animate-channel-typing-dots {
+  animation: channel-typing-dots 5s ease-in-out infinite;
+}
+.animate-channel-bubble-reply {
+  animation: channel-bubble-reply 5s ease-in-out infinite;
+}
+.animate-channel-btn-press {
+  animation: channel-btn-press 5s ease-in-out infinite;
+}
+.animate-channel-success-in {
+  animation: channel-success-in 5s ease-in-out infinite;
+}
+.animate-channel-cursor-move {
+  animation: channel-cursor-move 5s ease-in-out infinite;
+}
+.animate-channel-section-pulse-1 {
+  animation: channel-section-pulse-1 5s ease-in-out infinite;
+}
+.animate-channel-section-pulse-2 {
+  animation: channel-section-pulse-2 5s ease-in-out infinite;
+}

@@ -21,7 +21,7 @@ export function Footer() {
           </p>
           <div className="mt-5 flex gap-3">
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/infinitycontabilidadesolucoes/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-primary-foreground/20"

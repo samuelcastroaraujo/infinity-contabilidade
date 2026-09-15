@@ -56,7 +56,7 @@ export function ContactSection() {
             <div className="flex items-start gap-3">
               <Camera className="mt-0.5 size-5 shrink-0 text-primary" />
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/infinitycontabilidadesolucoes/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-foreground/85 hover:text-primary"

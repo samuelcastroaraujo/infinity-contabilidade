@@ -43,7 +43,7 @@ const localBusinessJsonLd = {
     { "@type": "City", name: "Anápolis" },
     { "@type": "State", name: "Goiás" },
   ],
-  sameAs: ["https://www.instagram.com/"],
+  sameAs: ["https://www.instagram.com/infinitycontabilidadesolucoes/"],
 };
 
 export default function RootLayout({

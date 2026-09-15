@@ -61,8 +61,8 @@ export function HeroSection() {
 
           <div className="relative size-full overflow-hidden rounded-[3rem] shadow-2xl ring-1 ring-primary-foreground/10">
             <Image
-              src="/sites/agilize-com-br-d8fa62a2/shared/cliente-infinity.jpg"
-              alt="Cliente Infinity Contabilidade"
+              src="/sites/agilize-com-br-d8fa62a2/shared/profissional-contador.jpg"
+              alt="Profissional contábil da Infinity Contabilidade"
               fill
               sizes="(min-width: 1024px) 600px, 100vw"
               className="object-cover object-top transition-transform duration-500 group-hover:scale-105"

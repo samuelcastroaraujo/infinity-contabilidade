@@ -1,4 +1,5 @@
-import { Check } from "lucide-react";
+import Image from "next/image";
+import { Check, ShieldCheck, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const VALUE_PROPS = [
@@ -53,22 +54,51 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative hidden aspect-[4/3] items-center justify-center lg:flex">
-          <div className="absolute inset-0 rounded-[3rem] bg-primary-foreground/10" />
-          <div className="relative flex size-full items-center justify-center overflow-hidden rounded-[3rem] bg-gradient-to-br from-primary-foreground/15 to-transparent">
-            <span className="text-primary-foreground/50">
-              [ foto do escritório / equipe ]
-            </span>
+        <div className="group relative hidden aspect-[4/3] items-center justify-center lg:flex">
+          <div className="absolute -inset-4 rounded-[3.5rem] bg-primary-foreground/10 transition-transform duration-500 group-hover:-rotate-2" />
+          <div className="absolute -right-6 -top-6 size-24 rounded-full bg-accent/20 blur-2xl" />
+          <div className="absolute -bottom-8 -left-6 size-32 rounded-full bg-brand-amber/20 blur-2xl" />
+
+          <div className="relative size-full overflow-hidden rounded-[3rem] shadow-2xl ring-1 ring-primary-foreground/10">
+            <Image
+              src="/sites/agilize-com-br-d8fa62a2/shared/cliente-infinity.jpg"
+              alt="Cliente Infinity Contabilidade"
+              fill
+              sizes="(min-width: 1024px) 600px, 100vw"
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
           </div>
-          <div className="absolute -bottom-4 right-4 flex items-center gap-3 rounded-2xl bg-background px-4 py-3 shadow-lg">
-            <div className="size-10 shrink-0 rounded-full bg-muted" />
+
+          <div className="absolute -left-6 top-8 flex items-center gap-3 rounded-2xl bg-background px-4 py-3 shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <ShieldCheck className="size-4" />
+            </span>
             <div className="text-sm">
-              <p className="font-bold text-foreground">Fábio</p>
-              <p className="text-xs text-muted-foreground">
-                Contador responsável
-              </p>
+              <p className="font-bold text-foreground">Desde 2014</p>
+              <p className="text-xs text-muted-foreground">Anápolis / GO</p>
             </div>
           </div>
+
+          <a
+            href="https://wa.me/5562991053454"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute -bottom-6 right-6 flex items-center gap-3 rounded-2xl bg-background px-4 py-3 shadow-lg transition-transform duration-300 hover:scale-105 group-hover:translate-y-1"
+          >
+            <span className="relative flex size-9 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+              <MessageCircle className="size-4" />
+              <span className="absolute -right-0.5 -top-0.5 flex size-2.5">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-75" />
+                <span className="relative inline-flex size-2.5 rounded-full bg-accent" />
+              </span>
+            </span>
+            <div className="text-sm">
+              <p className="font-bold text-foreground">Fale agora</p>
+              <p className="text-xs text-muted-foreground">via WhatsApp</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>

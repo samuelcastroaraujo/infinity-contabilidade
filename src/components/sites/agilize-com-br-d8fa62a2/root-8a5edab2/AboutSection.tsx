@@ -1,4 +1,5 @@
-import { UserRound, Handshake, Gauge, Eye, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Handshake, Gauge, Eye, MapPin } from "lucide-react";
 
 const DIFERENCIAIS = [
   { icon: Handshake, text: "Atendimento personalizado" },
@@ -24,9 +25,15 @@ export function AboutSection() {
             </p>
 
             <div className="mt-8 flex items-center gap-4 rounded-2xl bg-secondary p-5">
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <UserRound className="size-7" />
-              </span>
+              <div className="relative size-14 shrink-0 overflow-hidden rounded-full ring-2 ring-primary">
+                <Image
+                  src="/sites/agilize-com-br-d8fa62a2/shared/fabio-contador.jpg"
+                  alt="Fábio, contador responsável"
+                  fill
+                  sizes="56px"
+                  className="object-cover object-top"
+                />
+              </div>
               <div>
                 <p className="font-heading text-lg font-bold text-foreground">
                   Fábio

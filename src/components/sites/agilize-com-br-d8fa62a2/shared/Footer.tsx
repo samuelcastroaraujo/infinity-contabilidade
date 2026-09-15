@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="bg-primary py-14 text-primary-foreground">
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-12 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-10">
         <div>
-          <Logo className="[&_span]:text-primary-foreground [&_span_span]:text-primary-foreground/70" />
+          <Logo />
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/85">
             Soluções contábeis, fiscais e financeiras para empresas de todos
             os portes. Atendimento presencial em Anápolis/GO e 100% digital

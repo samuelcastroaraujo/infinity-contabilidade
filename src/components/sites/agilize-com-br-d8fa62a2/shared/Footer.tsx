@@ -2,10 +2,10 @@ import { Camera } from "lucide-react";
 import { Logo } from "./Logo";
 
 const SERVICE_LINKS = [
-  { label: "Folha de Pagamento e Departamento Pessoal", href: "#servicos" },
-  { label: "Assessoria Contábil e Fiscal", href: "#servicos" },
-  { label: "Serviços Trabalhistas e Financeiros", href: "#servicos" },
-  { label: "Emissão de Nota Fiscal Eletrônica (NFe)", href: "#servicos" },
+  { label: "Folha de Pagamento e Departamento Pessoal", href: "/#servicos" },
+  { label: "Assessoria Contábil e Fiscal", href: "/#servicos" },
+  { label: "Serviços Trabalhistas e Financeiros", href: "/#servicos" },
+  { label: "Emissão de Nota Fiscal Eletrônica (NFe)", href: "/#servicos" },
 ];
 
 export function Footer() {
@@ -17,7 +17,7 @@ export function Footer() {
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/85">
             Soluções contábeis, fiscais e financeiras para empresas de todos
             os portes. Atendimento presencial em Anápolis/GO e 100% digital
-            em todo o estado de Goiás, desde 2014.
+            em todo o território nacional, desde 2014.
           </p>
           <div className="mt-5 flex gap-3">
             <a

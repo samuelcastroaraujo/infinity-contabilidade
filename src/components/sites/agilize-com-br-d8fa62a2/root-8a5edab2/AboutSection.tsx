@@ -5,7 +5,7 @@ const DIFERENCIAIS = [
   { icon: Handshake, text: "Atendimento personalizado" },
   { icon: Gauge, text: "Suporte ágil e consultivo" },
   { icon: Eye, text: "Transparência e foco total no cliente" },
-  { icon: MapPin, text: "Atendimento presencial e 100% digital em todo o estado de Goiás" },
+  { icon: MapPin, text: "Atendimento presencial em Anápolis/GO e 100% digital em todo o território nacional" },
 ];
 
 export function AboutSection() {

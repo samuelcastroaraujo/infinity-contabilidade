@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Infinity Contabilidade | Contabilidade em Anápolis e Goiás",
   description:
-    "Contabilidade em Anápolis/GO desde 2014. Folha de pagamento, assessoria contábil e fiscal, serviços trabalhistas e emissão de NFe. Atendimento presencial em Anápolis e 100% digital em todo o estado de Goiás.",
+    "Contabilidade em Anápolis/GO desde 2014. Folha de pagamento, assessoria contábil e fiscal, serviços trabalhistas e emissão de NFe. Atendimento presencial em Anápolis e 100% digital em todo o território nacional.",
 };
 
 const localBusinessJsonLd = {
@@ -43,6 +43,7 @@ const localBusinessJsonLd = {
   areaServed: [
     { "@type": "City", name: "Anápolis" },
     { "@type": "State", name: "Goiás" },
+    { "@type": "Country", name: "Brasil" },
   ],
   sameAs: ["https://www.instagram.com/infinitycontabilidadesolucoes/"],
 };

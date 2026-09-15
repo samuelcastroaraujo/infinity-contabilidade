@@ -22,8 +22,8 @@ const FAQS = [
     a: "A abertura do MEI pode ser feita diretamente pelo empreendedor, mas contar com um contador ajuda a evitar erros no enquadramento e a planejar a migração para microempresa quando o faturamento crescer.",
   },
   {
-    q: "A Infinity Contabilidade atende empresas de outras cidades de Goiás?",
-    a: "Sim. Temos atendimento presencial em Anápolis/GO e atendimento 100% digital para empresas em todo o estado de Goiás.",
+    q: "A Infinity Contabilidade atende empresas de outras cidades e estados?",
+    a: "Sim. Temos atendimento presencial em Anápolis/GO e atendimento 100% digital para empresas em todo o território nacional.",
   },
   {
     q: "A contabilidade digital substitui o atendimento presencial?",

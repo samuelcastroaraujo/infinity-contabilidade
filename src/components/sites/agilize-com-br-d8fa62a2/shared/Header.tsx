@@ -6,11 +6,11 @@ import { CalculatorsMenu } from "./CalculatorsMenu";
 
 const NAV_LINKS_BEFORE = [
   { label: "Início", href: "/" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Serviços", href: "#servicos" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Serviços", href: "/#servicos" },
 ];
 
-const NAV_LINKS_AFTER = [{ label: "Contato", href: "#contato" }];
+const NAV_LINKS_AFTER = [{ label: "Contato", href: "/#contato" }];
 
 const CLIENT_AREA_URL =
   "https://passport.nibo.com.br/account/login?id=883acbbd-8468-40ea-a9b0-7e130d91d4e9";

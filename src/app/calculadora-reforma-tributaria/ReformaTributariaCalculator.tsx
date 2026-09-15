@@ -49,7 +49,7 @@ export function ReformaTributariaCalculator() {
       <div className="rounded-3xl border border-border bg-muted p-6 sm:p-8">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <label className="flex flex-col gap-1.5 text-sm">
-            Qual o seu regime tributário atual?
+            <span className="flex min-h-10 items-center">Qual o seu regime tributário atual?</span>
             <select
               value={regime}
               onChange={(e) => setRegime(e.target.value as Regime)}
@@ -64,7 +64,7 @@ export function ReformaTributariaCalculator() {
           </label>
 
           <label className="flex flex-col gap-1.5 text-sm">
-            Sua atividade tem redução de alíquota na reforma?
+            <span className="flex min-h-10 items-center">Sua atividade tem redução de alíquota na reforma?</span>
             <select
               value={setor}
               onChange={(e) => setSetor(e.target.value as Setor)}

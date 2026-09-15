@@ -23,8 +23,12 @@ function CurrencyField({
 }) {
   return (
     <label className="flex flex-col gap-1.5 text-sm">
-      {label}
-      {optional && <span className="text-xs text-muted-foreground">(opcional)</span>}
+      <span>
+        {label}{" "}
+        <span className={optional ? "text-xs text-muted-foreground" : "text-xs text-muted-foreground invisible"}>
+          (opcional)
+        </span>
+      </span>
       <input
         inputMode="decimal"
         placeholder="R$ 0,00"

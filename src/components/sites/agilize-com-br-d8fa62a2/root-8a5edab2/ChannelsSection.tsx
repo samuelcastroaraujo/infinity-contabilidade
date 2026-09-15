@@ -137,7 +137,7 @@ export function ChannelsSection() {
             size="lg"
             className="h-12 rounded-full bg-accent px-6 text-base font-bold text-accent-foreground hover:bg-accent/90"
             nativeButton={false}
-            render={<a href="#contato">Abrir CNPJ grátis</a>}
+            render={<a href="#contato">Abrir CNPJ</a>}
           />
           <Button
             size="lg"

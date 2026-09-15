@@ -36,18 +36,21 @@ export function AboutSection() {
               </div>
               <div>
                 <p className="font-heading text-lg font-bold text-foreground">
-                  Fábio
+                  Fábio Luiz
+                  <span className="ml-2 text-sm font-medium text-muted-foreground">
+                    CRC/GO 17334
+                  </span>
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Contador responsável — inteligência contábil aplicada à
-                  gestão de negócios.
+                  Contador responsável com mais de 20 anos de experiência —
+                  inteligência contábil aplicada à gestão de negócios.
                 </p>
               </div>
             </div>
 
             <p className="mt-6 text-sm text-muted-foreground">
               Desde 2014 atendendo empresas em Anápolis/GO, de forma
-              presencial, e em todo o estado de Goiás, de forma 100% digital.
+              presencial, e em todo o território nacional, de 100% digital.
             </p>
           </div>
 

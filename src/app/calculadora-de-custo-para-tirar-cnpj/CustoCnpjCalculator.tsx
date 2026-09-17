@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { formatBRL } from "@/lib/tax-calculators";
 import municipiosBrasil from "@/lib/municipios-brasil.json";
@@ -236,7 +237,7 @@ export function CustoCnpjCalculator() {
         <Button
           className="mt-4 h-11 rounded-full bg-accent px-6 text-accent-foreground hover:bg-accent/90"
           nativeButton={false}
-          render={<a href="/#contato">Falar com um especialista</a>}
+          render={<Link href="/#contato">Falar com um especialista</Link>}
         />
       </div>
     </div>

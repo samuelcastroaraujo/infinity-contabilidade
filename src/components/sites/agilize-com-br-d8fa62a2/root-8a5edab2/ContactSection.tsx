@@ -1,5 +1,7 @@
 import { MapPin, Phone, Mail, Camera } from "lucide-react";
 import { ContactForm } from "./ContactForm";
+import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
 
 const PHONES = [
   { label: "WhatsApp", value: "(62) 99105-3454", href: "https://wa.me/5562991053454" },
@@ -9,21 +11,21 @@ const PHONES = [
 
 export function ContactSection() {
   return (
-    <section id="contato" className="py-20 scroll-mt-24">
-      <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-start gap-10 px-6 lg:grid-cols-2 lg:px-10">
+    <Section id="contato" tone="subtle" className="scroll-mt-24">
+      <Container className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
         <div>
-          <h2 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
+          <h2 className="font-heading text-h2 font-extrabold text-primary-700">
             Contato & Localização
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-neutral-500">
             Fale com a gente por WhatsApp, telefone, e-mail ou venha até o
             nosso escritório em Anápolis.
           </p>
 
           <div className="mt-8 space-y-5">
             <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 size-5 shrink-0 text-primary" />
-              <p className="text-sm text-foreground/85">
+              <MapPin className="mt-0.5 size-5 shrink-0 text-primary-500" />
+              <p className="text-sm text-neutral-700">
                 Rua Geralda Alves da Costa, Quadra F, Lote 18, Sala 02
                 <br />
                 Vila Santa Isabel — Anápolis/GO
@@ -31,11 +33,11 @@ export function ContactSection() {
             </div>
 
             <div className="flex items-start gap-3">
-              <Phone className="mt-0.5 size-5 shrink-0 text-primary" />
-              <div className="space-y-1 text-sm text-foreground/85">
+              <Phone className="mt-0.5 size-5 shrink-0 text-primary-500" />
+              <div className="space-y-1 text-sm text-neutral-700">
                 {PHONES.map((p) => (
                   <p key={p.value}>
-                    <a href={p.href} className="hover:text-primary" target="_blank" rel="noopener noreferrer">
+                    <a href={p.href} className="hover:text-primary-600" target="_blank" rel="noopener noreferrer">
                       {p.label}: {p.value}
                     </a>
                   </p>
@@ -44,22 +46,22 @@ export function ContactSection() {
             </div>
 
             <div className="flex items-start gap-3">
-              <Mail className="mt-0.5 size-5 shrink-0 text-primary" />
+              <Mail className="mt-0.5 size-5 shrink-0 text-primary-500" />
               <a
                 href="mailto:infinitycontabilidade20@gmail.com"
-                className="text-sm text-foreground/85 hover:text-primary"
+                className="text-sm text-neutral-700 hover:text-primary-600"
               >
                 infinitycontabilidade20@gmail.com
               </a>
             </div>
 
             <div className="flex items-start gap-3">
-              <Camera className="mt-0.5 size-5 shrink-0 text-primary" />
+              <Camera className="mt-0.5 size-5 shrink-0 text-primary-500" />
               <a
                 href="https://www.instagram.com/infinitycontabilidadesolucoes/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-foreground/85 hover:text-primary"
+                className="text-sm text-neutral-700 hover:text-primary-600"
               >
                 Siga a gente no Instagram
               </a>
@@ -68,7 +70,7 @@ export function ContactSection() {
         </div>
 
         <ContactForm />
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

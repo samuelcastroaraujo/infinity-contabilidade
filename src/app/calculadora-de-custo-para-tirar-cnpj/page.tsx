@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Calculadora de Custo para Abrir CNPJ | Infinity Contabilidade",
   description:
     "Estime o custo para abrir sua empresa: certificado digital, taxas de registro e alvará. Valores variam por cidade e atividade.",
+  alternates: { canonical: "/calculadora-de-custo-para-tirar-cnpj" },
 };
 
 export default function Page() {

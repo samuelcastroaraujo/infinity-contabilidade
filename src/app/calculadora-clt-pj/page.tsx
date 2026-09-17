@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Calculadora CLT x PJ | Infinity Contabilidade",
   description:
     "Compare seu salário como CLT e como PJ e veja quanto você precisaria faturar como pessoa jurídica para manter o mesmo padrão de vida.",
+  alternates: { canonical: "/calculadora-clt-pj" },
 };
 
 export default function Page() {

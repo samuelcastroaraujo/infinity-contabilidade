@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Calculadora da Reforma Tributária | Infinity Contabilidade",
   description:
     "Simule, de forma ilustrativa, o impacto da Reforma Tributária (IBS e CBS) no seu negócio.",
+  alternates: { canonical: "/calculadora-reforma-tributaria" },
 };
 
 export default function Page() {

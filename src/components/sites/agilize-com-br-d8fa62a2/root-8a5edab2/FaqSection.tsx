@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
 const FAQS = [
@@ -53,43 +55,59 @@ export function FaqSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="pb-20">
+    <Section tone="default">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-10">
-        <h2 className="text-center font-heading text-3xl font-extrabold text-primary sm:text-4xl">
+      <Container>
+        <h2 className="text-center font-heading text-h2 font-extrabold text-primary-700">
           Perguntas Frequentes
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
           Dúvidas sobre contabilidade em Anápolis e região? Reunimos as
           perguntas mais comuns dos nossos clientes.
         </p>
 
-        <div className="mx-auto mt-10 max-w-3xl divide-y divide-border rounded-2xl bg-muted">
-          {FAQS.map((faq, i) => (
-            <div key={faq.q} className="px-6">
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                aria-expanded={open === i}
-                className="flex w-full items-center justify-between gap-4 py-5 text-left"
+        <div className="mx-auto mt-10 max-w-3xl divide-y divide-border overflow-hidden rounded-lg border border-border bg-background">
+          {FAQS.map((faq, i) => {
+            const isOpen = open === i;
+            return (
+              <div
+                key={faq.q}
+                className={cn("px-6 transition-colors", isOpen && "bg-primary-50/60")}
               >
-                <span className="font-semibold text-foreground">{faq.q}</span>
-                <ChevronDown
-                  className={cn(
-                    "size-5 shrink-0 text-muted-foreground transition-transform",
-                    open === i && "rotate-180"
-                  )}
-                />
-              </button>
-              {open === i && (
-                <p className="pb-5 text-sm text-muted-foreground">{faq.a}</p>
-              )}
-            </div>
-          ))}
+                <button
+                  id={`faq-trigger-${i}`}
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${i}`}
+                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                >
+                  <span className={cn("font-semibold", isOpen ? "text-primary-700" : "text-foreground")}>
+                    {faq.q}
+                  </span>
+                  <ChevronDown
+                    className={cn(
+                      "size-5 shrink-0 transition-transform",
+                      isOpen ? "rotate-180 text-primary-600" : "text-neutral-400"
+                    )}
+                  />
+                </button>
+                <p
+                  id={`faq-panel-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-trigger-${i}`}
+                  hidden={!isOpen}
+                  className="pb-5 text-sm text-neutral-600"
+                >
+                  {faq.a}
+                </p>
+              </div>
+            );
+          })}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

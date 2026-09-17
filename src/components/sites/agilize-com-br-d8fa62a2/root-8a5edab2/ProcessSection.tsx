@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FileText, Repeat, BarChart3, Headphones, FileCheck2, CheckCircle2 } from "lucide-react";
+import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
 const TABS = [
@@ -43,17 +45,141 @@ const STEPS_BY_TAB: Record<(typeof TABS)[number]["id"], { icon: typeof Headphone
   ],
 };
 
+const NODE_TONE = ["bg-primary-400", "bg-primary-600", "bg-success"];
+
+type Step = { icon: typeof Headphones; title: string; description: string };
+
+function DesktopTrack({ steps, inView }: { steps: Step[]; inView: boolean }) {
+  return (
+    <div className="mt-10 hidden rounded-lg bg-secondary p-10 md:flex">
+      {steps.map((step, i) => {
+        const isLast = i === steps.length - 1;
+        return (
+          <div key={step.title} className="relative flex flex-1 flex-col items-center px-4 text-center">
+            {i > 0 && (
+              <div aria-hidden className="absolute left-0 right-1/2 top-7 h-0.5 overflow-hidden bg-neutral-200">
+                <div
+                  className={cn(
+                    "h-full origin-left bg-primary-400 transition-transform duration-700 ease-out",
+                    inView ? "scale-x-100" : "scale-x-0"
+                  )}
+                  style={{ transitionDelay: `${i * 150}ms` }}
+                />
+                {inView && (
+                  <div
+                    className="animate-track-light-x absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/90 to-transparent"
+                    style={{ animationDelay: `${700 + i * 150}ms` }}
+                  />
+                )}
+              </div>
+            )}
+            <div
+              className={cn(
+                "relative z-10 flex size-14 items-center justify-center rounded-full font-heading text-lg font-bold text-white shadow-md transition-all duration-500",
+                NODE_TONE[i],
+                inView ? "scale-100 opacity-100" : "scale-75 opacity-0"
+              )}
+              style={{ transitionDelay: `${i * 150}ms` }}
+            >
+              {i + 1}
+            </div>
+            <div className="mt-4 flex items-center gap-1.5">
+              <step.icon className="size-4 text-primary-600" />
+              <h3 className="font-heading text-base font-bold text-foreground">{step.title}</h3>
+            </div>
+            <p className="mt-2 text-sm text-neutral-500">{step.description}</p>
+            {isLast && (
+              <span className="mt-3 inline-flex items-center rounded-full bg-success/10 px-2.5 py-1 text-xs font-semibold text-success">
+                Concluído
+              </span>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function MobileTimeline({ steps, inView }: { steps: Step[]; inView: boolean }) {
+  return (
+    <div className="mt-10 space-y-8 rounded-lg bg-secondary p-6 md:hidden">
+      {steps.map((step, i) => {
+        const isLast = i === steps.length - 1;
+        return (
+          <div key={step.title} className="relative flex gap-4">
+            {!isLast && (
+              <div aria-hidden className="absolute left-7 top-14 h-[calc(100%-0.5rem)] w-0.5 -translate-x-1/2 overflow-hidden bg-neutral-200">
+                <div
+                  className={cn(
+                    "h-full w-full origin-top bg-primary-400 transition-transform duration-700 ease-out",
+                    inView ? "scale-y-100" : "scale-y-0"
+                  )}
+                  style={{ transitionDelay: `${i * 150}ms` }}
+                />
+                {inView && (
+                  <div
+                    className="animate-track-light-y absolute inset-x-0 h-1/3 bg-gradient-to-b from-transparent via-white/90 to-transparent"
+                    style={{ animationDelay: `${700 + i * 150}ms` }}
+                  />
+                )}
+              </div>
+            )}
+            <div
+              className={cn(
+                "z-10 flex size-14 shrink-0 items-center justify-center rounded-full font-heading text-lg font-bold text-white shadow-md",
+                NODE_TONE[i]
+              )}
+            >
+              {i + 1}
+            </div>
+            <div className="pt-1.5">
+              <div className="flex items-center gap-1.5">
+                <step.icon className="size-4 text-primary-600" />
+                <h3 className="font-heading text-base font-bold text-foreground">{step.title}</h3>
+              </div>
+              <p className="mt-1.5 text-sm text-neutral-500">{step.description}</p>
+              {isLast && (
+                <span className="mt-2 inline-flex items-center rounded-full bg-success/10 px-2.5 py-1 text-xs font-semibold text-success">
+                  Concluído
+                </span>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export function ProcessSection() {
   const [active, setActive] = useState<(typeof TABS)[number]["id"]>("abrir");
-  const steps = STEPS_BY_TAB[active];
+
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="bg-muted py-20">
-      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-10">
-        <h2 className="text-center font-heading text-3xl font-extrabold text-primary sm:text-4xl">
+    <Section tone="subtle">
+      <Container>
+        <h2 className="text-center font-heading text-h2 font-extrabold text-primary-700">
           Uma contabilidade que te acompanha em cada momento
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
           Desde a escolha do melhor regime tributário para sua empresa até a
           rotina contábil do dia a dia, vamos cuidar de tudo para que você
           possa empreender com segurança e sem preocupações. Veja como é
@@ -61,7 +187,7 @@ export function ProcessSection() {
           Infinity.
         </p>
 
-        <div className="mt-10 rounded-3xl bg-background p-6 sm:p-10">
+        <div className="mt-10 rounded-lg border border-border bg-background p-6 shadow-sm sm:p-10">
           <div
             role="tablist"
             aria-label="Etapas do processo"
@@ -70,14 +196,16 @@ export function ProcessSection() {
             {TABS.map((tab) => (
               <button
                 key={tab.id}
+                id={`process-tab-${tab.id}`}
                 role="tab"
                 aria-selected={active === tab.id}
+                aria-controls={`process-panel-${tab.id}`}
                 onClick={() => setActive(tab.id)}
                 className={cn(
                   "flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors",
                   active === tab.id
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/70"
+                    ? "bg-primary-500 text-white"
+                    : "bg-secondary text-secondary-foreground hover:bg-primary-100"
                 )}
               >
                 <tab.icon className="size-4" />
@@ -86,26 +214,22 @@ export function ProcessSection() {
             ))}
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-8 rounded-2xl bg-secondary p-6 sm:p-10 md:grid-cols-3">
-            {steps.map((step, i) => (
-              <div key={step.title} className="text-center">
-                <div className="relative mx-auto flex size-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                  <step.icon className="size-6" />
-                  <span className="absolute -right-1 -top-1 flex size-6 items-center justify-center rounded-full bg-background text-xs font-bold text-foreground">
-                    {i + 1}
-                  </span>
-                </div>
-                <h3 className="mt-4 font-heading text-base font-bold text-foreground">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {step.description}
-                </p>
+          <div ref={trackRef}>
+            {TABS.map((tab) => (
+              <div
+                key={tab.id}
+                id={`process-panel-${tab.id}`}
+                role="tabpanel"
+                aria-labelledby={`process-tab-${tab.id}`}
+                hidden={active !== tab.id}
+              >
+                <DesktopTrack steps={STEPS_BY_TAB[tab.id]} inView={inView} />
+                <MobileTimeline steps={STEPS_BY_TAB[tab.id]} inView={inView} />
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

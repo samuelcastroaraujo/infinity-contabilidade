@@ -1,4 +1,7 @@
 import { Users, FileBarChart, Scale, ReceiptText } from "lucide-react";
+import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
+import { Card } from "@/components/ui/card";
 
 const SERVICES = [
   {
@@ -29,32 +32,30 @@ const SERVICES = [
 
 export function ServicesSection() {
   return (
-    <section id="servicos" className="bg-muted py-20 scroll-mt-24">
-      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-10">
-        <h2 className="text-center font-heading text-3xl font-extrabold text-primary sm:text-4xl">
+    <Section id="servicos" tone="default" className="scroll-mt-24">
+      <Container>
+        <h2 className="text-center font-heading text-h2 font-extrabold text-primary-700">
           Serviços
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
           Atuamos nas áreas contábil, fiscal, trabalhista e financeira, com
           soluções sob medida para empresas de todos os portes.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {SERVICES.map((service) => (
-            <div key={service.title} className="rounded-2xl bg-background p-7 shadow-sm">
-              <span className="flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+            <Card key={service.title} hover>
+              <span className="flex size-12 items-center justify-center rounded-full bg-primary-500 text-white">
                 <service.icon className="size-6" />
               </span>
-              <h3 className="mt-5 font-heading text-lg font-bold text-foreground">
+              <h3 className="mt-5 font-heading text-h4 font-bold text-foreground">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {service.description}
-              </p>
-            </div>
+              <p className="mt-2 text-sm text-neutral-500">{service.description}</p>
+            </Card>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

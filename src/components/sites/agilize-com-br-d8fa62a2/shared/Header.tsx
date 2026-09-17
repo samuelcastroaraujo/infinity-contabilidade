@@ -24,10 +24,10 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto flex h-[84px] w-full max-w-[1440px] items-center justify-between px-6 lg:px-10">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur">
+      <div className="mx-auto flex h-[84px] w-full max-w-[1200px] items-center justify-between px-6 lg:px-10">
         <Link href="/" aria-label="Infinity Contabilidade" onClick={() => setMobileOpen(false)}>
-          <Logo />
+          <Logo variant="header" tone="mono" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -55,7 +55,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
-            className="hidden rounded-full border-primary px-4 text-primary sm:flex"
+            className="hidden sm:flex"
             nativeButton={false}
             render={
               <a href={CLIENT_AREA_URL} target="_blank" rel="noopener noreferrer">
@@ -70,12 +70,21 @@ export function Header() {
             aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
-            className="flex size-10 items-center justify-center rounded-full text-foreground lg:hidden"
+            className="flex size-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-primary-200 lg:hidden"
           >
             {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
           </button>
         </div>
       </div>
+
+      <div
+        aria-hidden="true"
+        className="h-[2px] w-full"
+        style={{
+          background:
+            "linear-gradient(90deg, var(--silver-light) 0%, var(--silver-dark) 50%, var(--silver-light) 100%)",
+        }}
+      />
 
       {mobileOpen && (
         <div className="border-t border-border bg-background px-6 py-4 lg:hidden">

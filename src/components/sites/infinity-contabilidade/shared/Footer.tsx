@@ -14,7 +14,10 @@ const SERVICE_LINKS = [
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-primary-700 py-14 text-white">
-      <InfinityMark className="pointer-events-none absolute -bottom-16 -right-16 h-72 w-72 text-white/[0.04]" />
+      <InfinityMark
+        animated={false}
+        className="pointer-events-none absolute -bottom-16 -right-16 h-72 w-72 text-white/[0.04]"
+      />
 
       <Container className="relative grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
         <div>

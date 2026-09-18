@@ -140,7 +140,7 @@
   --neutral-200: #E3E7EF;
   --neutral-300: #CBD2DF;
   --neutral-400: #9AA3B5;
-  --neutral-500: #6B7488;
+  --neutral-500: #5C6579; /* escurecido de #6B7488: contraste 4,7:1 contra branco falhava no texto pequeno (WCAG AA) */
   --neutral-600: #4C5468;
   --neutral-700: #363D4D;
   --neutral-800: #232936;

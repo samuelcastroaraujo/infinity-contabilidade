@@ -46,7 +46,11 @@ function deriveCenterline(logoPath: string): Trail | null {
 
   try {
     const L = path.getTotalLength();
-    const N = 1600;
+    // 400 amostras já dão uma curva suave para um brilho desfocado; cada
+    // amostra custa uma chamada a getPointAtLength (cara em paths complexos
+    // como este), e o pareamento de bordas abaixo é O(N²) — era o maior
+    // custo de JS da página (1600 chamadas + até 2,56M comparações).
+    const N = 400;
     const pts: Pt[] = [];
     for (let i = 0; i < N; i++) {
       const p = path.getPointAtLength((L * i) / N);

@@ -10,13 +10,13 @@ import { Button } from "@/components/ui/button";
 //   no menu de 3 pontinhos do Google Forms (preencha um valor de teste em
 //   cada campo e copie o link gerado — cada campo vira um entry.NUMERO).
 const GOOGLE_FORM_ACTION_URL =
-  "https://docs.google.com/forms/d/e/SEU_FORM_ID_AQUI/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLSeyubnfS5oV8jNF8ueifTFCmcAqLQczyuNb3waCPigX4jXb1A/formResponse";
 
 const ENTRY_IDS = {
-  nome: "entry.000000001",
-  email: "entry.000000002",
-  assunto: "entry.000000003",
-  mensagem: "entry.000000004",
+  nome: "entry.1473554254",
+  email: "entry.1275426873",
+  assunto: "entry.235636981",
+  mensagem: "entry.2085043178",
 };
 
 const INPUT_CLASS =

@@ -3,12 +3,12 @@ import { cn } from "@/lib/utils";
 
 const LOGO_SOURCES = {
   default: {
-    metallic: "/sites/agilize-com-br-d8fa62a2/shared/logo-infinity.png",
-    mono: "/sites/agilize-com-br-d8fa62a2/shared/logo-infinity-mono.png",
+    metallic: "/sites/infinity-contabilidade/shared/logo-infinity.png",
+    mono: "/sites/infinity-contabilidade/shared/logo-infinity-mono.png",
   },
   header: {
-    metallic: "/sites/agilize-com-br-d8fa62a2/shared/logo-infinity-header.png",
-    mono: "/sites/agilize-com-br-d8fa62a2/shared/logo-infinity-header-mono.png",
+    metallic: "/sites/infinity-contabilidade/shared/logo-infinity-header.png",
+    mono: "/sites/infinity-contabilidade/shared/logo-infinity-header-mono.png",
   },
 } as const;
 

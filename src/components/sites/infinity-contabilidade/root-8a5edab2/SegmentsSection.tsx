@@ -67,7 +67,7 @@ export function SegmentsSection() {
 
           <div className="relative hidden overflow-hidden rounded-lg lg:block">
             <Image
-              src="/sites/agilize-com-br-d8fa62a2/shared/fabio-contador.jpg"
+              src="/sites/infinity-contabilidade/shared/fabio-contador.jpg"
               alt="Fábio Luiz, contador responsável pela Infinity Contabilidade"
               fill
               sizes="320px"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Camera } from "lucide-react";
 import { Logo } from "./Logo";
 import { InfinityMark } from "./InfinityMark";
@@ -50,8 +51,8 @@ export function Footer() {
               </a>
             </p>
             <p>
-              <a href="https://wa.me/5562993218485" className="hover:text-white">
-                WhatsApp: (62) 99321-8485
+              <a href="https://wa.me/5562992184956" className="hover:text-white">
+                WhatsApp: (62) 99218-4956
               </a>
             </p>
             <p>
@@ -81,7 +82,66 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className="relative mt-10 border-t border-white/15 pt-6 text-xs text-white/70">
+      <Container className="relative mt-10 border-t border-white/15 pt-8">
+        <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/sites/infinity-contabilidade/shared/app-mobile-icon.png"
+              alt=""
+              width={45}
+              height={45}
+              className="size-11 shrink-0"
+            />
+            <p className="text-sm text-white/85">
+              Baixe o app <strong className="font-semibold text-white">Infinity Contabilidade</strong>
+              <br />
+              em seu dispositivo móvel.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <Image
+              src="/sites/infinity-contabilidade/shared/app-qrcode.png"
+              alt="QR Code para baixar o app Infinity Contabilidade"
+              width={100}
+              height={100}
+              className="hidden size-20 rounded bg-white p-1 sm:block"
+            />
+            <div className="flex flex-col gap-2">
+              <a
+                href="https://play.google.com/store/apps/details?id=br.com.nibo.customer.infinitycontabilidade"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Disponível no Google Play"
+              >
+                <Image
+                  src="/sites/infinity-contabilidade/shared/google-play-badge.svg"
+                  alt="Disponível no Google Play"
+                  width={150}
+                  height={43}
+                  className="h-[38px] w-auto"
+                />
+              </a>
+              <a
+                href="https://apps.apple.com/br/app/infinity-contabilidade/id6761774065"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Disponível na App Store"
+              >
+                <Image
+                  src="/sites/infinity-contabilidade/shared/app-store-badge.svg"
+                  alt="Disponível na App Store"
+                  width={150}
+                  height={43}
+                  className="h-[38px] w-auto"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </Container>
+
+      <Container className="relative mt-8 border-t border-white/15 pt-6 text-xs text-white/70">
         Infinity Contabilidade — CNPJ 38.488.614/0001-37 — © {new Date().getFullYear()} Todos os direitos reservados
       </Container>
     </footer>

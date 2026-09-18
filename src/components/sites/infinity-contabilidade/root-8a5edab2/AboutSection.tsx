@@ -32,7 +32,7 @@ export function AboutSection() {
             <div className="mt-8 flex items-center gap-4 rounded-lg bg-background p-5 shadow-sm">
               <div className="relative size-14 shrink-0 overflow-hidden rounded-full ring-2 ring-primary-500">
                 <Image
-                  src="/sites/agilize-com-br-d8fa62a2/shared/fabio-contador.jpg"
+                  src="/sites/infinity-contabilidade/shared/fabio-contador.jpg"
                   alt="Fábio, contador responsável"
                   fill
                   sizes="56px"

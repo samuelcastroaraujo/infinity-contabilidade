@@ -6,7 +6,7 @@ import "./globals.css";
 const PAGE_TITLE = "Infinity Contabilidade | Contabilidade em Anápolis e Goiás";
 const PAGE_DESCRIPTION =
   "Contabilidade em Anápolis/GO desde 2014. Folha de pagamento, assessoria contábil e fiscal, serviços trabalhistas e emissão de NFe. Atendimento presencial em Anápolis e 100% digital em todo o território nacional.";
-const OG_LOGO = "/sites/agilize-com-br-d8fa62a2/shared/logo-infinity.png";
+const OG_LOGO = "/sites/infinity-contabilidade/shared/logo-infinity.png";
 
 const inter = Inter({
   variable: "--font-sans",

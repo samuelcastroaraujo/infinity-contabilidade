@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/sites/agilize-com-br-d8fa62a2/shared/Header";
-import { Footer } from "@/components/sites/agilize-com-br-d8fa62a2/shared/Footer";
+import { Header } from "@/components/sites/infinity-contabilidade/shared/Header";
+import { Footer } from "@/components/sites/infinity-contabilidade/shared/Footer";
 import { CustoCnpjCalculator } from "./CustoCnpjCalculator";
 
 export const metadata: Metadata = {

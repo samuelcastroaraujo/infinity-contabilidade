@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 
 const PHONES = [
   { label: "WhatsApp", value: "(62) 99105-3454", href: "https://wa.me/5562991053454" },
-  { label: "WhatsApp", value: "(62) 99321-8485", href: "https://wa.me/5562993218485" },
+  { label: "WhatsApp", value: "(62) 99218-4956", href: "https://wa.me/5562992184956" },
   { label: "Telefone fixo", value: "(62) 3314-6896", href: "tel:+556233146896" },
 ];
 

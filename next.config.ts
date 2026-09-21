@@ -9,6 +9,18 @@ const SECURITY_HEADERS = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Canonicaliza o domínio sem www para www (evita "página alternativa com
+  // tag canônica" no Search Console).
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "infinitycontabilidade.net" }],
+        destination: "https://www.infinitycontabilidade.net/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
